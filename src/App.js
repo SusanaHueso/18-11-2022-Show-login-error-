@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Home from './Containers/Home/Home';
-import About from './Containers/Home/Home';
+import About from './Containers/About/About';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Register from './Containers/Register/Register';
@@ -16,18 +16,18 @@ function App() {
     <div className="App">
 
     <BrowserRouter>
-      {/* Our whole app is going to be contained here */}
+    
 
       <Header />
 
       <Routes>
 
-        {/* Anything contained here will be switchable, it will swap and change */}
 
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/about" element={<About />} />
         
       </Routes>
 
