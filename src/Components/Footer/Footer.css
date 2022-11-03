@@ -1,0 +1,9 @@
+.footerDesign {
+    color:white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+    background-color:rgb(106, 183, 102);
+  }
+  
