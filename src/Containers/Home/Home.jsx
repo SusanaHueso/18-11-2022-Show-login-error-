@@ -1,20 +1,25 @@
-import React,{useEffect, useState} from 'react';
-import './Home.css'
+import React, { useEffect, useState } from "react";
+import "./Home.css";
 
-const Home = () =>{
-    const [toggle,setToggle] = useState(0)
-    // UseEffect will change value of Toggle at mounting
-    // useEffect(()=>{setToggle(1)},[])
-    // UseEffect will change value of Toggle continuously (loop)
-    // useEffect(()=>{setToggle(1)},)    
-    // useEffect(()=>{setToggle(1)},[toggle])
+export default class Home extends React.Component {
+  // const [toggle,setToggle] = useState(0);
+  constructor(props) {
+    super(props);
+    this.state = { toggle: 0 };
+  }
+  //componentWillUnmount(){}
+  change() {
+    let toggleChanged = this.state.toggle === 0 ? 1 : 0;
+    this.setState({ toggle: toggleChanged });
+  }
 
-    
+  render() {
+    return (
+      <div className="homeDesign">
+        <button onClick={() => this.change()}>This is a toggle button</button>
 
-    return (<div className ="homeDesign">
-        
-        <button onClick={() => (toggle === 0) ? setToggle(1): setToggle(0)}>This is a toggle button</button> 
-        
-         <p>{toggle}</p></div>)
+        <p>{this.state.toggle}</p>
+      </div>
+    );
+  }
 }
-export default Home;
