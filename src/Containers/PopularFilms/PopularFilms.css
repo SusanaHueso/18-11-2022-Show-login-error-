@@ -1,10 +1,14 @@
 .popularFilmsDesign {
-    position: absolute;
-    color:black;
-    bottom: 25%;
-    width: 80%;
-    height: 50%;
-    margin-left: 10%;
-    background-color: white;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10%, 1fr));
+  grid-gap: 36%;
+  min-width: 50%;
+
+  position: absolute;
+  color: black;
+  top: 25%;
+  width: 20%;
+  height: 20%;
+  margin-left: 17%;
+  background-color: white;
+}
