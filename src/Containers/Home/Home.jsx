@@ -1,7 +1,6 @@
 import React from "react";
-import * as ReactDOM from "react-dom";
 import "./Home.css";
-import "/Users/susana.huesodevis/Documents/GeeksHubs exercises/11-11-2022-Technical-Test-Basic/src/Components/CustomCard/Card.css";
+
 import image from "/Users/susana.huesodevis/Documents/GeeksHubs exercises/11-11-2022-Technical-Test-Basic/src/images/image.jpg";
 
 import Card from "react-bootstrap/Card";
@@ -20,8 +19,9 @@ export const Home = () => {
           <Card.Title>
             <b>Welcome to Rotten Potatoes</b>
           </Card.Title>
-          <Card.Text>
-            Log in and watch thousands of movies!
+          <Card.Text Style={{ textalign: "centre" }}>
+            <>Log in and watch thousands of movies!</>
+            <p></p>
             <Button variant="primary">Log In</Button>
           </Card.Text>
         </Card.Body>
