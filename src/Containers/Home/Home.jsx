@@ -1,55 +1,31 @@
 import React from "react";
 import * as ReactDOM from "react-dom";
 import "./Home.css";
+import "/Users/susana.huesodevis/Documents/GeeksHubs exercises/11-11-2022-Technical-Test-Basic/src/Components/CustomCard/Card.css";
+import image from "/Users/susana.huesodevis/Documents/GeeksHubs exercises/11-11-2022-Technical-Test-Basic/src/images/image.jpg";
 
-export default class Home extends React.Component {
-  // const [toggle,setToggle] = useState(0);
-  constructor(props) {
-    super(props);
-    this.state = { show: true, toggle: 0, componentState: "" };
-  }
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
-  componentDidMount() {
-    this.setState({ componentState: "only the fist time" });
-    setTimeout(() => {
-      console.log("I appear", this.state.componentState);
-    }, 1000);
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.toggle !== this.state.toggle) {
-      this.setState({ componentState: "everytime the toggle component updates" });
-      setTimeout(() => {
-        console.log("I appear", this.state.componentState);
-      }, 1000);
-    }
-  }
-
-  change() {
-    let toggleChanged = this.state.toggle === 0 ? 1 : 0;
-    this.setState({ toggle: toggleChanged });
-  }
-  hide() {
-    this.state.show === true
-      ? this.setState({ show: false })
-      : this.setState({ show: true });
-  }
-
-  render() {
-    return (
-      <div className="homeDesign">
-        {this.state.show && (
-          <div>
-            <button onClick={() => this.change()}>
-              This is a toggle button
-            </button>
-            <p>{this.state.toggle}</p>
-          </div>
-        )}
-        <button onClick={() => this.hide()}>
-          Click to hide/show the toggle button
-        </button>
-      </div>
-    );
-  }
-}
+export const Home = () => {
+  return (
+    <div className="homeDesign" style={{ backgroundImage: `url(${image})` }}>
+      <Card className="welcomeCard" style={{ width: "18rem" }}>
+        <Card.Img
+          className="card-img-top"
+          variant="top"
+          src="https://www.jblearning.com/images/default-source/icons/home-page/quote-avater.png"
+        />
+        <Card.Body>
+          <Card.Title>
+            <b>Welcome to Rotten Potatoes</b>
+          </Card.Title>
+          <Card.Text>
+            Log in and watch thousands of movies!
+            <Button variant="primary">Log In</Button>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </div>
+  );
+};
