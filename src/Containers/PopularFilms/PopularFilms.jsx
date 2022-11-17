@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./PopularFilms.css";
-import axios from "axios";
-import Popup from "reactjs-popup";
-import "reactjs-popup/dist/index.css";
+
 import { Card } from "react-bootstrap";
 const PopularFilms = () => {
   const [movies, setMovies] = useState([]);
@@ -43,15 +41,19 @@ const PopularFilms = () => {
               ></img>
 
               {movieInfo && id === movie["poster_path"] && (
-                <Card className="welcomeCard">
-                  <>
-                    <div className=" movieInfo">
-                      <b>{movie["original_title"]}</b>
-                      <p>{movie["release_date"]}</p>
-                      <p>{movie["overview"]}</p>
-                    </div>
-                  </>
-                </Card>
+                <div className=" movieInfo">
+                  <Card className="welcomeCardFilm" style={{ width: "18rem" }}>
+                    <Card.Body>
+                      <Card.Title>
+                        <b>{movie["original_title"]}</b>
+                      </Card.Title>
+                      <Card.Text>
+                        <p>{movie["release_date"]}</p>
+                        <p>{movie["overview"]}</p>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </div>
               )}
             </>
           </div>
