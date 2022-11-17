@@ -1,8 +1,9 @@
 .headerDesign {
   position: absolute;
   height: 14%;
-
+  font-size: 200%;
   width: 100%;
+  opacity: 85%;
 
   background: radial-gradient(
       circle at center,

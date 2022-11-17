@@ -1,5 +1,6 @@
 .welcomeCard {
   background: white !important;
+  opacity: 95% ;
   position: absolute;
   top: 20%;
   left: 25%;
