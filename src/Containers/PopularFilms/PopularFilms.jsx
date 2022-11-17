@@ -4,8 +4,9 @@ import axios from "axios";
 
 const PopularFilms = () => {
   const [movies, setMovies] = useState([]);
+
   useEffect(() => {
-    setMovies();
+    getRecipes();
   }, []);
   const getRecipes = async () => {
     const response = await fetch(
@@ -13,8 +14,27 @@ const PopularFilms = () => {
     );
     const data = await response.json();
     setMovies(data.results);
-    console.log(data);
+    //["poster_path"] to access the path
   };
-  return <div className="popularFilmsDesign">PopularFilms</div>;
+  console.log(movies);
+  /*      {movies.map(
+          (movie) => <img
+          src={
+            "https://image.tmdb.org/t/p/w500" + movie["poster_path"]
+          }
+        ></img>  
+        )} */
+
+  return (
+    <div className="popularFilmsDesign">
+      <React.Fragment>
+        {movies.map((movie) => (
+          <img
+            src={"https://image.tmdb.org/t/p/w500" + movie["poster_path"]}
+          ></img>
+        ))}
+      </React.Fragment>
+    </div>
+  );
 };
 export default PopularFilms;
