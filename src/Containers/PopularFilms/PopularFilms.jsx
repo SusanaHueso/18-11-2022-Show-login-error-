@@ -3,7 +3,7 @@ import "./PopularFilms.css";
 import axios from "axios";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
-
+import { Card } from "react-bootstrap";
 const PopularFilms = () => {
   const [movies, setMovies] = useState([]);
   const [movieInfo, setMovieInfo] = useState(false);
@@ -34,23 +34,27 @@ const PopularFilms = () => {
     <div className="popularFilmsDesign">
       <React.Fragment>
         {movies.map((movie) => (
-          <>
-            <img
-              src={"https://image.tmdb.org/t/p/w500" + movie["poster_path"]}
-              alt={movie["poster_path"]}
-              onClick={() => handleClick(movie, movie["poster_path"])}
-            ></img>
+          <div className="imageAndInfo">
+            <>
+              <img
+                src={"https://image.tmdb.org/t/p/w500" + movie["poster_path"]}
+                alt={movie["poster_path"]}
+                onClick={() => handleClick(movie, movie["poster_path"])}
+              ></img>
 
-            {movieInfo && id === movie["poster_path"] && (
-              <>
-                <div className=" movieInfo">
-                  <b>{movie["original_title"]}</b>
-                  <p>{movie["release_date"]}</p>
-                  <p>{movie["overview"]}</p>
-                </div>
-              </>
-            )}
-          </>
+              {movieInfo && id === movie["poster_path"] && (
+                <Card className="welcomeCard">
+                  <>
+                    <div className=" movieInfo">
+                      <b>{movie["original_title"]}</b>
+                      <p>{movie["release_date"]}</p>
+                      <p>{movie["overview"]}</p>
+                    </div>
+                  </>
+                </Card>
+              )}
+            </>
+          </div>
         ))}
       </React.Fragment>
     </div>

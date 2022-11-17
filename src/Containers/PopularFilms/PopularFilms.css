@@ -1,9 +1,14 @@
+.imageAndInfo {
+  display: grid;
+  position: relative;
+  grid-template-rows: repeat(auto-fit, minmax(30%, 1fr));
+}
+
 .popularFilmsDesign {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10%, 1fr));
-  grid-gap: 36%;
+  grid-gap: 60%;
   min-width: 50%;
-
   position: absolute;
   color: black;
   top: 25%;
@@ -15,5 +20,17 @@
 .movieInfo {
   display: flex;
   flex-direction: column;
-  text-align: justify;
+  text-align: center;
+}
+
+.welcomeCard {
+  background: white !important;
+  opacity: 95%;
+  position: relative;
+  bottom: 190%;
+  left: 15%;
+  border-radius: 15px;
+  border-color: grey;
+  border-style: double;
+  height: 50%;
 }
