@@ -35,15 +35,20 @@ const PopularFilms = () => {
       <React.Fragment>
         {movies.map((movie) => (
           <>
-            <>
-              <img
-                src={"https://image.tmdb.org/t/p/w500" + movie["poster_path"]}
-                alt={movie["poster_path"]}
-                onClick={() => handleClick(movie, movie["poster_path"])}
-              ></img>
-            </>
+            <img
+              src={"https://image.tmdb.org/t/p/w500" + movie["poster_path"]}
+              alt={movie["poster_path"]}
+              onClick={() => handleClick(movie, movie["poster_path"])}
+            ></img>
+
             {movieInfo && id === movie["poster_path"] && (
-              <>{movie["original_title"]}</>
+              <>
+                <div className=" movieInfo">
+                  <b>{movie["original_title"]}</b>
+                  <p>{movie["release_date"]}</p>
+                  <p>{movie["overview"]}</p>
+                </div>
+              </>
             )}
           </>
         ))}

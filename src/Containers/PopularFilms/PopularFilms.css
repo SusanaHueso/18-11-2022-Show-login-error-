@@ -12,3 +12,8 @@
   margin-left: 17%;
   background-color: white;
 }
+.movieInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
