@@ -1,9 +1,10 @@
 // import logo from './logo.svg';
 import './App.css';
+import React from 'react'
 import {Home} from './Containers/Home/Home';
-import PopularFilms from './Containers/PopularFilms/PopularFilms';
-import Footer from './Components/Footer/Footer';
-import Header from './Components/Header/Header';
+import {Login} from './Containers/Login/Login';
+import {Register} from './Containers/Register/Register';
+
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -16,18 +17,18 @@ function App() {
     <BrowserRouter>
     
 
-      <Header />
+      
 
       <Routes>
 
 
         <Route path="/" element={<Home />} />
+        <Route path="/Login" element={<Login />} />
         
-        <Route path="/PopularFilms" element={<PopularFilms />} />
+        <Route path="/Register" element={<Register />} />
         
       </Routes>
 
-      <Footer />
 
 
     </BrowserRouter>

@@ -1,23 +1,34 @@
 .homeDesign {
   position: absolute;
-  color: black;
-  top: 14%;
   width: 100%;
   height: 100%;
-  background-color: darkcyan;
+  background: radial-gradient(
+      circle at center,
+      rgb(182, 229, 246),
+      rgb(241, 229, 229),
+      rgb(118, 118, 239)
+    ),
+    100%;
 }
-.welcomeCard {
-  background: white !important;
-  opacity: 95%;
-  position: relative;
-  top: 20%;
-  left: 25%;
-  border-radius: 15px;
-  border-style: double;
-  border-color: grey;
+.loginButton {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  border-radius: 12px;
 }
-.card-img-top {
-  width: 100%;
-  height: 70%;
-  object-fit: contain;
+.loginButton:hover {
+  color: rgb(62, 0, 128);
+  background-color: bisque;
+  border-radius: 12px;
+}
+.registerButton {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  border-radius: 12px;
+}
+.registerButton:hover {
+  color: rgb(62, 0, 128);
+  background-color: bisque;
+  border-radius: 12px;
 }
