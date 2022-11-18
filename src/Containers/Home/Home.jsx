@@ -2,7 +2,6 @@ import React from "react";
 import "./Home.css";
 import { useNavigate } from "react-router";
 
-import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 export const Home = () => {
