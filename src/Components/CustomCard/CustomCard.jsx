@@ -1,8 +1,9 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 import "./CustomCard.css";
 
-export const CustomCard = () => {
+export const CustomCard = (props) => {
   return (
     <Card className="welcomeCard" style={{ width: "18rem" }}>
       <Card.Img
@@ -12,12 +13,16 @@ export const CustomCard = () => {
       />
       <Card.Body>
         <Card.Title>
-          <b>Welcome to Rotten Potatoes</b>
+          <b>{props.title}</b>
         </Card.Title>
-        <Card.Text Style={{ textalign: "centre" }}>
-          <>Log in and watch thousands of movies!</>
-          <p></p>
-          <Button variant="primary">Log In</Button>
+        <Card.Text className="cardText" align="left">
+          Email: <input type="text" name="email" />
+          PassWord: <input type="text" name="password" />
+          <div>
+            <Button className="nextButton" variant="primary">
+              Next
+            </Button>
+          </div>
         </Card.Text>
       </Card.Body>
     </Card>
